@@ -1,1 +1,1 @@
-Here, we have some IO files for the MRI images. Since we have files of type [nifti](https://nifti.nimh.nih.gov/nifti-1/)
+Here, we have some IO files for the MRI images. Since we have files of type [nifti](https://nifti.nimh.nih.gov/nifti-1/), we need to use [nibabel](http://nipy.org/nibabel/), which is python's solution for this type of file. Please have this package installed _before_ running anything here! Other than that, please have [numpy](http://www.numpy.org/) and [tensorflow](https://www.tensorflow.org/) installed.
