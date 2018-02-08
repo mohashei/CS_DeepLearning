@@ -1,3 +1,5 @@
+#This script converts files from filelist into tfrecords type files. It was designed to be flexible,
+#but the filelist variable must be edited.
 import read_image as ri 
 import numpy as np
 import tensorflow as tf
@@ -13,11 +15,14 @@ tfrecords_filename = 'mri_mprage.tfrecords'
 options = tf.python_io.TFRecordOptions(tf.python_io.TFRecordCompressionType.GZIP)
 writer = tf.python_io.TFRecordWriter(tfrecords_filename, options=options)
 
-path_to_text='../files.txt'
+#path to list of directories, in a format readable by read
+path_to_text='files.txt'
 f = open(path_to_text).read()
 f = f.split('\n')
 f = f[:-1]
-f = list(map(lambda x: '/Volumes/SUSB/OAS2_RAW_PART2/'+x+'/RAW/', f))
+#This line will need to be edited
+f = list(map(lambda x: '/Dir_to_your_MRI_files/'+x+'/RAW/', f))
+#name of files inside each directory
 filenames = ['mpr-1.nifti.hdr', 'mpr-2.nifti.hdr', 'mpr-3.nifti.hdr']
 filepath_names = []
 eval_files = 10
@@ -31,6 +36,7 @@ for filepath in filepath_names:
     img = ri.Image(filepath)
     kdata = img.get_k_data(usfactor=0.1)
     xdata = img.get_x_data()
+    #converts data slice by slice to tfrecords data. Note the compression type is GZIP.
     for z in range(kdata.shape[1]):
         kdata_slice = np.squeeze(kdata[:,z])
         xdata_slice = np.squeeze(xdata[:,:,z])
