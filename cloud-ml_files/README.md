@@ -5,4 +5,4 @@ Goal: Perform [compressed sensing reconstruction](https://en.wikipedia.org/wiki/
 Methods: I used the [inception network](https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf) along with the [google cloud platform](https://cloud.google.com/) to train the network.
 
 Quickstart: Define the following environment variables:
-`JOB_NAME -- the name of the job
+`JOB_NAME -- the name of the job`
