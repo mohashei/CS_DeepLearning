@@ -6,7 +6,7 @@ Methods: I used the [inception network](https://www.cs.unc.edu/~wliu/papers/Goog
 
 Quickstart: Define the following environment variables:
 
-`JOB_NAME -- the name of the job to submit to the cloud
+JOB_NAME -- the name of the job to submit to the cloud
 
 OUTPUT_PATH -- the path to output data, should be on the google cloud servers
 
@@ -14,7 +14,7 @@ REGION -- the region the google cloud servers are located to run the model
 
 TRAIN_DATA -- the training data path, should be on the google cloud servers
 
-EVAL_DATA -- the evaluation data path, should be on the google cloud servers`
+EVAL_DATA -- the evaluation data path, should be on the google cloud servers
 
 Use the following command:
 
